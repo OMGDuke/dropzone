@@ -1,4 +1,4 @@
-const erangel = {
+const erangelData = {
   locations: [
     {
       name: 'Power',
@@ -21,4 +21,4 @@ const erangel = {
   ],
 };
 
-export default erangel;
+export default erangelData;

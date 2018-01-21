@@ -1,8 +1,8 @@
 <template>
  <div class="map">
-   <img class="map__image" src="@/assets/erangel-map.png/" alt="">
+   <img class="map__image" :src="mapImage" alt="">
    <div class="grid">
-    <template v-for="coord in gridCoords">
+    <template v-for="coord in mapData.grid">
       <div class="grid__square" :key="coord"
         :class="{'grid__square--selected': coord === selectedSquare.coord}"></div>
     </template>
@@ -12,20 +12,19 @@
 </template>
 
 <script>
-import erangel from '../Erangel';
-
 export default {
   name: 'Map',
+  props: ['mapImage', 'mapData'],
   data() {
     return {
-      gridCoords: erangel.grid,
-      locations: erangel.locations,
       selectedSquare: this.selectSquare(),
     };
   },
   methods: {
     selectSquare() {
-      const location = erangel.locations[Math.floor(Math.random() * erangel.locations.length)];
+      const locations = this.mapData.locations;
+      const index = Math.random() * locations.length;
+      const location = locations[Math.floor(index)];
       return location;
     },
   },

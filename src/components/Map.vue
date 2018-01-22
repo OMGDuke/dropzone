@@ -32,9 +32,12 @@
     </div>
     <div class="controls">
       <div class="repick">
-        <button v-on:click="() => {selectSquare()}">Pick again</button>
+        <a href="#" v-on:click="() => {selectSquare()}">Pick again</a>
       </div>
-      <h1 class="location">Dropping in {{selectedSquare.name}} - ({{selectedSquare.coord}})</h1>
+      <div class="location">
+        <h2>You should drop in:</h2>
+        <h2>{{selectedSquare.name}} - ({{selectedSquare.coord}})</h2>
+      </div>
     </div>
   </div>
 </template>
@@ -67,6 +70,7 @@ export default {
   .map {
     display: grid;
     grid-template-columns: 820px 1fr;
+    color: white;
   }
 
   .map__container {
@@ -116,13 +120,27 @@ export default {
   }
 
   .grid__square--selected {
-    background: rgba(0, 256, 0, 0.5);
+    background: rgba(0, 256, 0, 0.3);
   }
 
   .controls {
     display: grid;
     grid-template-rows: 100px 1fr;
     text-align: center;
+  }
+
+  .repick {
+    justify-self: center;
+  }
+
+  .repick > a {
+    background-color: white;
+    color: rgb(21, 25, 32);
+    height: 30px;
+    width: 100px;
+    line-height: 30px;
+    text-decoration: none;
+    display: block;
   }
 
   .location {

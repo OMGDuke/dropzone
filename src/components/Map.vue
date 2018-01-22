@@ -1,6 +1,6 @@
 <template>
   <div class="map">
-    <div>
+    <div class="map__container">
       <div class="grid__horizontal">
         <div>A</div>
         <div>B</div>
@@ -10,6 +10,16 @@
         <div>F</div>
         <div>G</div>
         <div>H</div>
+      </div>
+      <div class="grid__vertical">
+        <div>I</div>
+        <div>J</div>
+        <div>K</div>
+        <div>L</div>
+        <div>M</div>
+        <div>N</div>
+        <div>O</div>
+        <div>P</div>
       </div>
       <img class="map__image" :src="mapImage" alt="">
       <div class="grid">
@@ -43,7 +53,6 @@ export default {
   },
   methods: {
     selectSquare() {
-      console.log('called');
       const locations = this.mapData.locations;
       const index = Math.random() * locations.length;
       const location = locations[Math.floor(index)];
@@ -57,21 +66,20 @@ export default {
 <style scoped>
   .map {
     display: grid;
-    grid-template-columns: 800px 1fr;
+    grid-template-columns: 820px 1fr;
+  }
+
+  .map__container {
+    display: grid;
+    grid-template-columns: 20px 800px;
+    grid-template-rows: 20px 800px;
   }
   .map__image {
     height: 800px;;
     position: absolute;
     z-index: -10;
-  }
-  .grid__horizontal {
-    display: grid;
-    grid-template-columns: repeat(8, 100px);
-    grid-template-rows: auto;
-  }
-
-  .grid__horizontal div {
-    justify-self: center;
+    top: 50px;
+    left: 50px;
   }
 
   .grid {
@@ -80,6 +88,27 @@ export default {
     display: grid;
     grid-template-columns: repeat(8, 100px);
     grid-template-rows: repeat(8, 100px);
+  }
+    .grid__horizontal {
+    display: grid;
+    grid-template-columns: repeat(8, 100px);
+    grid-column-start: 2;
+    font-weight: bold;
+  }
+
+  .grid__horizontal div {
+    justify-self: center;
+  }
+
+  .grid__vertical {
+    display: grid;
+    grid-template-rows: repeat(8, 100px);
+    font-weight: bold;
+  }
+
+    .grid__vertical div {
+    align-self: center;
+    width: 10px;
   }
 
   .grid__square {

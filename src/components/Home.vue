@@ -22,11 +22,11 @@
 
         <!-- Erangel -->
         <div class="erangel column">
-          <a class="map__link" href="/erangel">
+          <router-link to="/erangel" class="map__link">
             <figure class="image is-square">
               <img class="map__erangel" src="../assets/erangel-map.png" alt="">
             </figure>
-          </a>
+          </router-link>
          <router-link to="/erangel" class="button is-primary is-outlined">
             <h2>Erangel</h2>
           </router-link>

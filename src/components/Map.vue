@@ -32,7 +32,7 @@
     </div>
     <div class="controls">
       <div class="repick">
-        <a href="#" v-on:click="() => {selectSquare()}">Pick again</a>
+        <a href="#" v-on:click="selectSquare">Pick again</a>
       </div>
       <div class="location">
         <h2>You should drop in:</h2>
@@ -66,24 +66,23 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style lang="scss" scoped>
   .map {
     display: grid;
     grid-template-columns: 820px 1fr;
     color: white;
-  }
-
-  .map__container {
-    display: grid;
-    grid-template-columns: 20px 800px;
-    grid-template-rows: 20px 800px;
-  }
-  .map__image {
-    height: 800px;;
-    position: absolute;
-    z-index: -10;
-    top: 50px;
-    left: 50px;
+    &__container {
+      display: grid;
+      grid-template-columns: 20px 800px;
+      grid-template-rows: 20px 800px;
+    }
+    &__image {
+      height: 800px;;
+      position: absolute;
+      z-index: -10;
+      top: 50px;
+      left: 50px;
+    }
   }
 
   .grid {
@@ -92,35 +91,30 @@ export default {
     display: grid;
     grid-template-columns: repeat(8, 100px);
     grid-template-rows: repeat(8, 100px);
-  }
-    .grid__horizontal {
-    display: grid;
-    grid-template-columns: repeat(8, 100px);
-    grid-column-start: 2;
-    font-weight: bold;
-  }
-
-  .grid__horizontal div {
-    justify-self: center;
-  }
-
-  .grid__vertical {
-    display: grid;
-    grid-template-rows: repeat(8, 100px);
-    font-weight: bold;
-  }
-
-    .grid__vertical div {
-    align-self: center;
-    width: 10px;
-  }
-
-  .grid__square {
-    border: 1px greenyellow solid;
-  }
-
-  .grid__square--selected {
-    background: rgba(0, 256, 0, 0.3);
+    &__horizontal {
+      display: grid;
+      grid-template-columns: repeat(8, 100px);
+      grid-column-start: 2;
+      font-weight: bold;
+      div {
+        justify-self: center;
+      }
+    }
+    &__vertical {
+      display: grid;
+      grid-template-rows: repeat(8, 100px);
+      font-weight: bold;
+      div {
+        align-self: center;
+        width: 10px;
+      }
+    }
+    &__square {
+      border: 1px greenyellow solid;
+      &--selected {
+        background: rgba(0, 256, 0, 0.3);
+      }
+    }
   }
 
   .controls {
@@ -131,16 +125,15 @@ export default {
 
   .repick {
     justify-self: center;
-  }
-
-  .repick > a {
-    background-color: white;
-    color: rgb(21, 25, 32);
-    height: 30px;
-    width: 100px;
-    line-height: 30px;
-    text-decoration: none;
-    display: block;
+    > a {
+      background-color: white;
+      color: rgb(21, 25, 32);
+      height: 30px;
+      width: 100px;
+      line-height: 30px;
+      text-decoration: none;
+      display: block;
+    }
   }
 
   .location {

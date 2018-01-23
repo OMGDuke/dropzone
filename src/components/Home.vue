@@ -27,9 +27,9 @@
               <img class="map__erangel" src="../assets/erangel-map.png" alt="">
             </figure>
           </a>
-          <a class="button is-primary is-outlined" href="/erangel">
+         <router-link to="/erangel" class="button is-primary is-outlined">
             <h2>Erangel</h2>
-          </a>
+          </router-link>
         </div>
 
         <!-- Miramar -->

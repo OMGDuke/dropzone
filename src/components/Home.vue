@@ -1,18 +1,49 @@
 <template>
-  <div class="hello">
-    <h1>Dropzone</h1>
-    <div class="erangel">
-      <a href="/erangel"><div class="map map__erangel"></div></a>
-      <a class="link" href="/erangel">
-        <h2>Erangel</h2>
-      </a>
+  <section class="">
+          <!-- Header -->
+      <section class="hero is-primary is-bold">
+        <div class="hero-body">
+          <div class="container">
+            <h1 class="title">
+              DROPZONE
+            </h1>
+            <h2 class="subtitle">
+              Random Drop Locations
+            </h2>
+          </div>
+        </div>
+      </section>
+    <div class="section container">
+
+      <!-- Maps -->
+      <div class="columns has-text-centered">
+
+        <!-- Erangel -->
+        <div class="erangel column">
+          <a class="map__link" href="/erangel">
+            <figure class="image is-square">
+              <img class="map__erangel" src="../assets/erangel-map.png" alt="">
+            </figure>
+          </a>
+          <a class="button is-primary is-outlined" href="/erangel">
+            <h2>Erangel</h2>
+          </a>
+        </div>
+
+        <!-- Miramar -->
+        <div class="miramar column">
+          <figure class="image is-square">
+            <img src="../assets/miramar-map.jpg" alt="">
+            <div class="is-overlay map__miramar--cover"></div>
+          </figure>
+          <a class="button is-primary" disabled>
+            <h2>Miramar</h2>
+          </a>
+          <h3 class="subtitle is-5">Coming soon</h3>
+        </div>
+      </div>
     </div>
-    <div class="miramar">
-      <div class="map map__miramar" src="../assets/miramar-map.jpg" alt=""></div>
-      <h2><del>Miramar</del></h2>
-      <h3>Coming soon</h3>
-    </div>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -27,31 +58,23 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
-  div {
-    color: white;
-  }
-
-  .link {
-    display: block;
-    background-color: white;
-    width: 200px;
-    height: 50px;
-    text-align: center;
-    line-height: 50px;
-    text-decoration: none;
-    color: rgb(21, 25, 32);
+  figure {
+    margin-bottom: 10px;
   }
 
   .map {
-    width: 25vw;
-    height: 25vw;
-    background-size: cover;
-    &__erangel {
-      background: url("../assets/erangel-map.png");
+    &__link {
+      &:hover figure {
+        box-shadow: 0 0 15px 0 #00d1b2,
+                inset 0 0 0 1px #00d1b2,
+                inset 0px 11px 8px -10px #00d1b2,
+                inset 0px -11px 8px -10px #00d1b2;
+      }
     }
     &__miramar {
-      background: url("../assets/miramar-map.jpg");
-      background: rgba(39,62,84,0.82);
+      &--cover {
+        background-color: rgba(0,0,0,0.8);
+      }
     }
   }
 </style>

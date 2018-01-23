@@ -12,14 +12,11 @@ export default {
 
 <style lang="scss">
 @import "~bulma/bulma.sass";
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
 
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: 'Roboto Condensed', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-body {
-  margin: 30px;
-  background-color: rgb(21, 25, 32);
 }
 </style>

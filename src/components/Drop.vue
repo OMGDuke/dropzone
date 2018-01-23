@@ -1,6 +1,6 @@
 <template>
   <div class="drop section columns">
-    <div class="map__container--outer column">
+    <div class="map__container--outer column is-three-quarters">
       <div class="grid__horizontal">
         <div>A</div>
         <div>B</div>
@@ -34,7 +34,7 @@
     </div>
     <div class="controls column auto">
       <div class="repick">
-        <a class="button is-primary" href="#" v-on:click="selectSquare">Pick again</a>
+        <button class="button is-primary" v-on:click="selectSquare">Pick again</button>
       </div>
       <div class="location">
         <h2 class="title is-4">You should drop in:</h2>
@@ -69,16 +69,25 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
+  html {
+    background: black !important;
+  }
+  body {
+    background: black !important;
+  }
   .map {
     &__container {
       &--outer {
         display: grid;
         grid-template-columns: 20px auto;
         grid-template-rows: 20px auto;
+        max-width: 90vh;
       }
       &--inner {
         position: relative;
         padding: 0;
+        max-width: 90vh;
+
       }
     }
     &__image {
@@ -93,8 +102,6 @@ export default {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     grid-template-rows: repeat(8, 1fr);
-    // top: 68px;
-    // left: 44px;
     &__horizontal {
       display: grid;
       grid-template-columns: repeat(8, 1fr);

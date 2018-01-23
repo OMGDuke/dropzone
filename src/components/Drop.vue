@@ -1,6 +1,6 @@
 <template>
-  <div class="map">
-    <div class="map__container">
+  <div class="drop section columns">
+    <div class="map__container column">
       <div class="grid__horizontal">
         <div>A</div>
         <div>B</div>
@@ -21,8 +21,8 @@
         <div>O</div>
         <div>P</div>
       </div>
-      <img class="map__image" :src="mapImage" alt="">
-      <div class="grid">
+      <img class="map__image image" :src="mapImage" alt="">
+      <div class="grid is-overlay">
         <template v-for="coord in mapData.grid">
           <div class="grid__square" :key="coord"
             :class="{'grid__square--selected': coord === selectedSquare.coord}">
@@ -30,9 +30,9 @@
         </template>
       </div>
     </div>
-    <div class="controls">
+    <div class="controls column auto">
       <div class="repick">
-        <a href="#" v-on:click="selectSquare">Pick again</a>
+        <a class="button is-primary" href="#" v-on:click="selectSquare">Pick again</a>
       </div>
       <div class="location">
         <h2>You should drop in:</h2>
@@ -44,7 +44,7 @@
 
 <script>
 export default {
-  name: 'Map',
+  name: 'Drop',
   props: ['mapImage', 'mapData'],
   data() {
     return {
@@ -68,20 +68,17 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
   .map {
-    display: grid;
-    grid-template-columns: 820px 1fr;
-    color: white;
     &__container {
       display: grid;
       grid-template-columns: 20px 800px;
       grid-template-rows: 20px 800px;
     }
     &__image {
-      height: 800px;;
-      position: absolute;
-      z-index: -10;
-      top: 50px;
-      left: 50px;
+      // height: 800px;;
+      // position: absolute;
+      // z-index: -10;
+      // top: 50px;
+      // left: 50px;
     }
   }
 
@@ -91,6 +88,8 @@ export default {
     display: grid;
     grid-template-columns: repeat(8, 100px);
     grid-template-rows: repeat(8, 100px);
+    top: 68px;
+    left: 44px;
     &__horizontal {
       display: grid;
       grid-template-columns: repeat(8, 100px);
@@ -125,15 +124,6 @@ export default {
 
   .repick {
     justify-self: center;
-    > a {
-      background-color: white;
-      color: rgb(21, 25, 32);
-      height: 30px;
-      width: 100px;
-      line-height: 30px;
-      text-decoration: none;
-      display: block;
-    }
   }
 
   .location {

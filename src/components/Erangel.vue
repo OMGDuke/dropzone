@@ -1,18 +1,18 @@
 <template>
   <div>
-    <Map v-bind:mapImage="erangelMap" v-bind:mapData="erangelData"></Map>
+    <Drop v-bind:mapImage="erangelMap" v-bind:mapData="erangelData"></Drop>
   </div>
 </template>
 
 <script>
 import erangelMap from '@/assets/erangel-map.png';
 import erangelData from '../Erangel';
-import Map from './Map';
+import Drop from './Drop';
 
 export default {
   name: 'Erangel',
   components: {
-    Map,
+    Drop,
   },
   data() {
     return {

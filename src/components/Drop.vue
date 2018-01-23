@@ -1,6 +1,6 @@
 <template>
   <div class="drop section columns">
-    <div class="map__container column">
+    <div class="map__container--outer column">
       <div class="grid__horizontal">
         <div>A</div>
         <div>B</div>
@@ -21,13 +21,15 @@
         <div>O</div>
         <div>P</div>
       </div>
-      <img class="map__image image" :src="mapImage" alt="">
-      <div class="grid is-overlay">
-        <template v-for="coord in mapData.grid">
-          <div class="grid__square" :key="coord"
-            :class="{'grid__square--selected': coord === selectedSquare.coord}">
-          </div>
-        </template>
+      <div class="map__container--inner">
+        <img class="map__image image" :src="mapImage" alt="">
+        <div class="grid is-overlay">
+          <template v-for="coord in mapData.grid">
+            <div class="grid__square" :key="coord"
+              :class="{'grid__square--selected': coord === selectedSquare.coord}">
+            </div>
+          </template>
+        </div>
       </div>
     </div>
     <div class="controls column auto">
@@ -35,8 +37,8 @@
         <a class="button is-primary" href="#" v-on:click="selectSquare">Pick again</a>
       </div>
       <div class="location">
-        <h2>You should drop in:</h2>
-        <h2>{{selectedSquare.name}} - ({{selectedSquare.coord}})</h2>
+        <h2 class="title is-4">You should drop in:</h2>
+        <h2 class="title is-2">{{selectedSquare.name}} - ({{selectedSquare.coord}})</h2>
       </div>
     </div>
   </div>
@@ -69,30 +71,33 @@ export default {
 <style lang="scss" scoped>
   .map {
     &__container {
-      display: grid;
-      grid-template-columns: 20px 800px;
-      grid-template-rows: 20px 800px;
+      &--outer {
+        display: grid;
+        grid-template-columns: 20px auto;
+        grid-template-rows: 20px auto;
+      }
+      &--inner {
+        position: relative;
+        padding: 0;
+      }
     }
     &__image {
-      // height: 800px;;
-      // position: absolute;
-      // z-index: -10;
-      // top: 50px;
-      // left: 50px;
+      width: 100%;
     }
   }
 
   .grid {
-    width: 800px;
-    height: 800px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
     display: grid;
-    grid-template-columns: repeat(8, 100px);
-    grid-template-rows: repeat(8, 100px);
-    top: 68px;
-    left: 44px;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    // top: 68px;
+    // left: 44px;
     &__horizontal {
       display: grid;
-      grid-template-columns: repeat(8, 100px);
+      grid-template-columns: repeat(8, 1fr);
       grid-column-start: 2;
       font-weight: bold;
       div {
@@ -101,7 +106,7 @@ export default {
     }
     &__vertical {
       display: grid;
-      grid-template-rows: repeat(8, 100px);
+      grid-template-rows: repeat(8, 1fr);
       font-weight: bold;
       div {
         align-self: center;
@@ -120,6 +125,7 @@ export default {
     display: grid;
     grid-template-rows: 100px 1fr;
     text-align: center;
+    align-self: center;
   }
 
   .repick {

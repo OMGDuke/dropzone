@@ -27,7 +27,7 @@
               <img class="map__erangel" src="../assets/erangel-map.png" alt="">
             </figure>
           </router-link>
-         <router-link to="/erangel" class="button is-primary is-outlined">
+         <router-link to="/erangel" class="button is-primary">
             <h2>Erangel</h2>
           </router-link>
         </div>

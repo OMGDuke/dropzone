@@ -125,16 +125,20 @@ export default {
       }
     }
     &__square {
-      border: 1px greenyellow solid;
+      border: 1px $primary solid;
       &--selected {
-        background: rgba(0, 256, 0, 0.3);
+        background: rgba(0, 209, 178, 0.3);
+        box-shadow: 0 0 15px 0 $primary,
+                inset 0 0 0 1px $primary,
+                inset 0px 11px 8px -10px $primary,
+                inset 0px -11px 8px -10px $primary;
       }
     }
   }
 
   .controls {
     display: grid;
-    grid-template-rows: 1fr 1fr 2fr;
+    grid-template-rows: 100px 100px auto;
     width: 100%;
     text-align: center;
     &__link {
@@ -149,7 +153,6 @@ export default {
   }
 
   .repick {
-    align-self: flex-end;
     margin-bottom: 10px;
   }
 

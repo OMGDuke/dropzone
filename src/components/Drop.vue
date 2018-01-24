@@ -41,7 +41,8 @@
       </div>
       <div class="location">
         <h2 class="title is-4">You should drop in:</h2>
-        <h2 class="title is-2">{{selectedSquare.name}} - ({{selectedSquare.coord}})</h2>
+        <h2 class="title is-2">{{selectedSquare.name}}</h2>
+        <h2 class="title is-2">{{selectedSquare.coord}}</h2>
       </div>
     </div>
   </div>
@@ -73,12 +74,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
   @import "~bulma/bulma.sass";
-  html {
-    background: black !important;
-  }
-  body {
-    background: black !important;
-  }
+
   .map {
     &__container {
       &--outer {
@@ -144,9 +140,9 @@ export default {
     &__link {
       &--home {
         text-decoration: none;
-        color: $primary;
+        color: black;
         &:hover {
-          color: black;
+          color: $primary;
         }
       }
     }

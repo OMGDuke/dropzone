@@ -1,6 +1,6 @@
 <template>
   <div class="drop section columns">
-    <div class="map__container--outer column is-three-quarters">
+    <div class="map__container--outer column is-two-thirds">
       <div class="grid__horizontal">
         <div>A</div>
         <div>B</div>
@@ -33,6 +33,9 @@
       </div>
     </div>
     <div class="controls column auto">
+      <h1 class="title is-1">
+        <router-link class="controls__link--home" to="/">DROPZONE</router-link>
+      </h1>
       <div class="repick">
         <button class="button is-primary" v-on:click="selectSquare">Pick again</button>
       </div>
@@ -69,6 +72,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
+  @import "~bulma/bulma.sass";
   html {
     background: black !important;
   }
@@ -130,17 +134,26 @@ export default {
 
   .controls {
     display: grid;
-    grid-template-rows: 100px 1fr;
+    grid-template-rows: 1fr 1fr 2fr;
+    width: 100%;
     text-align: center;
-    align-self: center;
+    &__link {
+      &--home {
+        text-decoration: none;
+        color: $primary;
+        &:hover {
+          color: black;
+        }
+      }
+    }
   }
 
   .repick {
-    justify-self: center;
+    align-self: flex-end;
+    margin-bottom: 10px;
   }
 
   .location {
-    justify-self: center;
-    text-align: center;
+    max-width: 100%;
   }
 </style>

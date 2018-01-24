@@ -60,6 +60,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
+  @import "~bulma/bulma.sass";
   figure {
     margin-bottom: 10px;
   }
@@ -67,10 +68,10 @@ export default {
   .map {
     &__link {
       &:hover figure {
-        box-shadow: 0 0 15px 0 #00d1b2,
-                inset 0 0 0 1px #00d1b2,
-                inset 0px 11px 8px -10px #00d1b2,
-                inset 0px -11px 8px -10px #00d1b2;
+        box-shadow: 0 0 15px 0 $primary,
+                inset 0 0 0 1px $primary,
+                inset 0px 11px 8px -10px $primary,
+                inset 0px -11px 8px -10px $primary;
       }
     }
     &__miramar {

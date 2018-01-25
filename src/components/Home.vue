@@ -43,6 +43,18 @@
             <h2>Miramar</h2>
           </router-link>
         </div>
+
+        <!-- Fortnite -->
+        <div class="fortnite column">
+          <router-link to="/fortnite" class="map__link">
+            <figure class="image is-square">
+              <img src="../assets/fortnite-map.jpg" alt="">
+            </figure>
+          </router-link>
+          <router-link to="/fortnite" class="button is-primary">
+            <h2>Fortnite</h2>
+          </router-link>
+        </div>
       </div>
     </div>
   </section>

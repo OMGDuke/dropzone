@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Erangel from '@/components/Erangel';
+import Fortnite from '@/components/Fortnite';
 import Miramar from '@/components/Miramar';
 import Home from '@/components/Home';
 
@@ -18,6 +19,11 @@ export default new Router({
       path: '/erangel',
       name: 'Erangel',
       component: Erangel,
+    },
+    {
+      path: '/fortnite',
+      name: 'Fortnite',
+      component: Fortnite,
     },
     {
       path: '/miramar',

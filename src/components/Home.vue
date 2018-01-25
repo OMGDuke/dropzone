@@ -34,14 +34,14 @@
 
         <!-- Miramar -->
         <div class="miramar column">
-          <figure class="image is-square">
-            <img src="../assets/miramar-map.jpg" alt="">
-            <div class="is-overlay map__miramar--cover"></div>
-          </figure>
-          <a class="button is-primary" disabled>
+          <router-link to="/miramar" class="map__link">
+            <figure class="image is-square">
+              <img src="../assets/miramar-map.jpg" alt="">
+            </figure>
+          </router-link>
+          <router-link to="/miramar" class="button is-primary">
             <h2>Miramar</h2>
-          </a>
-          <h3 class="subtitle is-5">Coming soon</h3>
+          </router-link>
         </div>
       </div>
     </div>
@@ -72,11 +72,6 @@ export default {
                 inset 0 0 0 1px $primary,
                 inset 0px 11px 8px -10px $primary,
                 inset 0px -11px 8px -10px $primary;
-      }
-    }
-    &__miramar {
-      &--cover {
-        background-color: rgba(0,0,0,0.8);
       }
     }
   }

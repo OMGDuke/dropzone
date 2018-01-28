@@ -11,6 +11,22 @@ const fortniteData = {
     'A,9', 'B,9', 'C,9', 'D,9', 'E,9', 'F,9', 'G,9', 'H,9', 'I,9', 'J,9',
     'A,10', 'B,10', 'C,10', 'D,10', 'E,10', 'F,10', 'G,10', 'H,10', 'I,10', 'J,10',
   ],
+  horizontalGrid: [
+    'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J',
+  ],
+  verticalGrid: [
+    '1',
+    '2',
+    '3',
+    '4',
+    '5',
+    '6',
+    '7',
+    '8',
+    '9',
+    '10',
+  ],
+  gridSize: 10,
   locations: [
     {
       name: 'Anarchy Acres',

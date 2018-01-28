@@ -1,28 +1,20 @@
 <template>
   <div class="map__container--outer column is-two-thirds">
-    <div class="grid__horizontal">
-      <div>A</div>
-      <div>B</div>
-      <div>C</div>
-      <div>D</div>
-      <div>E</div>
-      <div>F</div>
-      <div>G</div>
-      <div>H</div>
+    <div class="grid__horizontal" v-bind:style="gridColumns">
+      <template v-for="coord in mapData.horizontalGrid">
+        <div :key="coord">{{coord}}
+        </div>
+      </template>
     </div>
-    <div class="grid__vertical">
-      <div>I</div>
-      <div>J</div>
-      <div>K</div>
-      <div>L</div>
-      <div>M</div>
-      <div>N</div>
-      <div>O</div>
-      <div>P</div>
+    <div class="grid__vertical" v-bind:style="gridRows">
+      <template v-for="coord in mapData.verticalGrid">
+        <div :key="coord">{{coord}}
+        </div>
+      </template>
     </div>
     <div class="map__container--inner">
       <img class="map__image image" :src="mapImage" alt="">
-      <div class="grid is-overlay">
+      <div class="grid is-overlay" v-bind:style="[gridColumns, gridRows]">
         <template v-for="coord in mapData.grid">
           <div class="grid__square" :key="coord"
             :class="{'grid__square--selected': coord === selectedSquare.coord}">
@@ -39,6 +31,12 @@ export default {
   props: ['mapImage', 'mapData', 'selectedSquare'],
   data() {
     return {
+      gridColumns: {
+        gridTemplateColumns: `repeat(${this.mapData.gridSize}, 1fr)`,
+      },
+      gridRows: {
+        gridTemplateRows: `repeat(${this.mapData.gridSize}, 1fr)`,
+      },
     };
   },
 };
@@ -85,11 +83,8 @@ export default {
     width: 100%;
     height: 100%;
     display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: repeat(8, 1fr);
     &__horizontal {
       display: grid;
-      grid-template-columns: repeat(8, 1fr);
       grid-column-start: 2;
       font-weight: bold;
       div {
@@ -98,7 +93,6 @@ export default {
     }
     &__vertical {
       display: grid;
-      grid-template-rows: repeat(8, 1fr);
       font-weight: bold;
       div {
         align-self: center;

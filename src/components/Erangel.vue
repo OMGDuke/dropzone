@@ -6,7 +6,7 @@
 
 <script>
 import erangelMap from '@/assets/erangel-map.png';
-import erangelData from '../Erangel';
+import erangelData from '../ErangelData';
 import Drop from './Drop';
 
 export default {

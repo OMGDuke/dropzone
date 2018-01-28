@@ -9,6 +9,20 @@ const miramarData = {
     'A,O', 'B,O', 'C,O', 'D,O', 'E,O', 'F,O', 'G,O', 'H,O',
     'A,P', 'B,P', 'C,P', 'D,P', 'E,P', 'F,P', 'G,P', 'H,P',
   ],
+  horizontalGrid: [
+    'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H',
+  ],
+  verticalGrid: [
+    'I',
+    'J',
+    'K',
+    'L',
+    'M',
+    'N',
+    'O',
+    'P',
+  ],
+  gridSize: 8,
   locations: [
     {
       name: 'Campo Militar',

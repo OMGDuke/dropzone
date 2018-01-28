@@ -1,18 +1,18 @@
 <template>
   <div>
-    <DropFortnite v-bind:mapImage="fortniteMap" v-bind:mapData="fortniteData"></DropFortnite>
+    <Drop v-bind:mapImage="fortniteMap" v-bind:mapData="fortniteData"></Drop>
   </div>
 </template>
 
 <script>
 import fortniteMap from '@/assets/fortnite-map.jpg';
-import fortniteData from '../Fortnite';
-import DropFortnite from './DropFortnite';
+import fortniteData from '../FortniteData';
+import Drop from './Drop';
 
 export default {
   name: 'Fortnite',
   components: {
-    DropFortnite,
+    Drop,
   },
   data() {
     return {

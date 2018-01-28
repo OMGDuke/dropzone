@@ -6,7 +6,7 @@
 
 <script>
 import miramarMap from '@/assets/miramar-map.jpg';
-import miramarData from '../Miramar';
+import miramarData from '../MiramarData';
 import Drop from './Drop';
 
 export default {

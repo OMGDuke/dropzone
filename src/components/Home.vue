@@ -1,19 +1,5 @@
 <template>
   <section class="">
-          <!-- Header -->
-      <section class="hero is-primary is-bold">
-        <div class="hero-body">
-          <div class="container">
-            <h1 class="title">
-              DROPZONE
-            </h1>
-            <h2 class="subtitle">
-              Random Drop Locations
-            </h2>
-          </div>
-        </div>
-      </section>
-
 
     <div class="section container">
 

@@ -1,8 +1,5 @@
 <template>
   <div class="section drop">
-    <h1 class="title is-1 page__heading">
-      <router-link to="/">DROPZONE - {{mapData.name}}</router-link>
-    </h1>
     <div class="columns">
       <Map v-bind:mapImage="mapImage" v-bind:mapData="mapData"
         v-bind:selectedSquare="selectedSquare">
@@ -52,18 +49,6 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
   @import "~bulma/bulma.sass";
-  .page {
-    &__heading {
-      text-align: center;
-      > a {
-        color: black;
-        text-decoration: none;
-        &:hover {
-          color: $primary;
-        }
-      }
-    }
-  }
 
   .controls {
     display: grid;

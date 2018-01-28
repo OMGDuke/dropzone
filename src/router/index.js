@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Home from '@/components/Home';
+import NotFound from '@/components/NotFound';
 import Erangel from '@/components/Erangel';
 import Fortnite from '@/components/Fortnite';
 import Miramar from '@/components/Miramar';
@@ -29,6 +30,11 @@ export default new Router({
       path: '/miramar',
       name: 'Miramar',
       component: Miramar,
+    },
+    {
+      path: '/*',
+      name: 'Not Found',
+      component: NotFound,
     },
   ],
   scrollBehavior() {

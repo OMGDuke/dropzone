@@ -28,7 +28,7 @@ export default {
 
   html {
     height: 100%;
-    background: url('./assets/topography.svg'), lightgray;
+    background: url('./assets/topography.jpg');
     background-size: 340px, auto;
     background-position: fixed;
   }

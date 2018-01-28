@@ -1,0 +1,16 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:7
+    steps:
+      - checkout
+      - run:
+          name: install-dependencies
+          command: npm install
+      - run:
+          name: build
+          command: npm run build
+      - deploy:
+          name: digital-ocean
+          command: rsync -./static omgduke@138.68.175.39:~/projects/dropzone_test

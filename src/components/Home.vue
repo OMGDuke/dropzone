@@ -20,51 +20,32 @@
       <!-- Maps -->
       <div class="columns has-text-centered">
 
-        <!-- Erangel -->
-        <div class="erangel column">
-          <router-link to="/erangel" class="map__link">
-            <figure class="image is-square">
-              <img class="map__erangel" src="../assets/erangel-map.png" alt="">
-            </figure>
-          </router-link>
-         <router-link to="/erangel" class="button is-primary">
-            <h2>Erangel</h2>
-          </router-link>
-        </div>
+        <template v-for="map in availableMaps">
+          <div class="column" :key="map.name">
+            <router-link :to="{ path: map.link }" class="map__link">
+              <figure class="image is-square">
+                <img :src=map.image :alt="map.name">
+              </figure>
+            </router-link>
+            <router-link :to="{ path: map.link }" class="button is-primary">
+              <h2>{{map.name}}</h2>
+            </router-link>
+          </div>
+        </template>
 
-        <!-- Miramar -->
-        <div class="miramar column">
-          <router-link to="/miramar" class="map__link">
-            <figure class="image is-square">
-              <img src="../assets/miramar-map.jpg" alt="">
-            </figure>
-          </router-link>
-          <router-link to="/miramar" class="button is-primary">
-            <h2>Miramar</h2>
-          </router-link>
-        </div>
-
-        <!-- Fortnite -->
-        <div class="fortnite column">
-          <router-link to="/fortnite" class="map__link">
-            <figure class="image is-square">
-              <img src="../assets/fortnite-map.jpg" alt="">
-            </figure>
-          </router-link>
-          <router-link to="/fortnite" class="button is-primary">
-            <h2>Fortnite</h2>
-          </router-link>
-        </div>
       </div>
     </div>
   </section>
 </template>
 
 <script>
+import availableMaps from '../AvailableMaps';
+
 export default {
   name: 'Home',
   data() {
     return {
+      availableMaps,
     };
   },
 };
@@ -79,7 +60,11 @@ export default {
 
   .map {
     &__link {
+      figure {
+        border: 3px $primary solid;
+      }
       &:hover figure {
+        border: 3px $primary solid;
         box-shadow: 0 0 15px 0 $primary,
                 inset 0 0 0 1px $primary,
                 inset 0px 11px 8px -10px $primary,

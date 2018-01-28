@@ -77,7 +77,7 @@ export default {
   }
 
   .location {
-    padding-top: 18px;
+    padding-top: 28px;
     max-width: 100%;
   }
 </style>

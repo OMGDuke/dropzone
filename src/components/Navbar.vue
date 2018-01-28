@@ -42,7 +42,7 @@
       </div>
 
       <div class="navbar-end">
-        <router-link to="/" class="navbar-item"
+        <router-link to="/about" class="navbar-item"
           v-bind:class="{ 'is-active' : $route.path === '/about' }">
           About
         </router-link>

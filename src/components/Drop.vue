@@ -5,13 +5,16 @@
         v-bind:selectedSquare="selectedSquare">
       </Map>
       <div class="controls column auto">
-        <div class="repick is-spaced">
+        <div class="controls__map-name">
+          <h2 class="title is-2">{{mapData.name}}</h2>
+        </div>
+        <div class="controls__repick is-spaced">
           <button class="button is-large is-primary" v-on:click="selectSquare">Pick again</button>
         </div>
-        <div class="location">
+        <div class="controls__location">
           <h2 class="title is-4">You should drop in:</h2>
           <h2 class="title is-2">{{selectedSquare.name}}</h2>
-          <h2 class="title is-2">{{selectedSquare.coord}}</h2>
+          <h2 class="subtitle is-3">{{selectedSquare.coord}}</h2>
         </div>
       </div>
     </div>
@@ -52,17 +55,16 @@ export default {
 
   .controls {
     display: grid;
-    grid-template-rows: 50px auto;
+    grid-template-rows: 1fr 1fr 3fr;
     width: 100%;
     text-align: center;
-  }
-
-  .repick {
-    padding-top: 18px;
-  }
-
-  .location {
-    padding-top: 38px;
-    max-width: 100%;
+    margin-top: 20px;
+    &__repick {
+      min-height: 70px;
+      align-self: center;
+    }
+    &__location {
+      max-width: 100%;
+    }
   }
 </style>

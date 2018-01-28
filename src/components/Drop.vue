@@ -1,14 +1,14 @@
 <template>
   <div class="section drop">
     <h1 class="title is-1 page__heading">
-      <router-link to="/">DROPZONE</router-link>
+      <router-link to="/">DROPZONE - {{mapData.name}}</router-link>
     </h1>
     <div class="columns">
       <Map v-bind:mapImage="mapImage" v-bind:mapData="mapData"
         v-bind:selectedSquare="selectedSquare">
       </Map>
       <div class="controls column auto">
-        <div class="repick">
+        <div class="repick is-spaced">
           <button class="button is-large is-primary" v-on:click="selectSquare">Pick again</button>
         </div>
         <div class="location">
@@ -77,7 +77,7 @@ export default {
   }
 
   .location {
-    padding-top: 28px;
+    padding-top: 38px;
     max-width: 100%;
   }
 </style>

@@ -1,4 +1,5 @@
 const miramarData = {
+  name: 'Miramar',
   grid: [
     'A,I', 'B,I', 'C,I', 'D,I', 'E,I', 'F,I', 'G,I', 'H,I',
     'A,J', 'B,J', 'C,J', 'D,J', 'E,J', 'F,J', 'G,J', 'H,J',

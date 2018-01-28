@@ -31,4 +31,7 @@ export default new Router({
       component: Miramar,
     },
   ],
+  scrollBehavior() {
+    return { x: 0, y: 0 };
+  },
 });

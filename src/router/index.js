@@ -1,6 +1,8 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Home from '@/components/Home';
+import About from '@/components/About';
+import NotFound from '@/components/NotFound';
 import Erangel from '@/components/Erangel';
 import Fortnite from '@/components/Fortnite';
 import Miramar from '@/components/Miramar';
@@ -16,6 +18,11 @@ export default new Router({
       component: Home,
     },
     {
+      path: '/about',
+      name: 'About',
+      component: About,
+    },
+    {
       path: '/erangel',
       name: 'Erangel',
       component: Erangel,
@@ -29,6 +36,11 @@ export default new Router({
       path: '/miramar',
       name: 'Miramar',
       component: Miramar,
+    },
+    {
+      path: '/*',
+      name: 'Not Found',
+      component: NotFound,
     },
   ],
   scrollBehavior() {

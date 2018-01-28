@@ -1,22 +1,22 @@
 <template>
-  <div class="section drop">
+  <div class="section drop has-text-centered">
+    <div class="map-name has-text-centered">
+      <h2 class="title is-2">{{mapData.name}}</h2>
+    </div>
     <div class="columns">
-      <Map v-bind:mapImage="mapImage" v-bind:mapData="mapData"
-        v-bind:selectedSquare="selectedSquare">
-      </Map>
-      <div class="controls column auto">
-        <div class="controls__map-name">
-          <h2 class="title is-2">{{mapData.name}}</h2>
+       <div class="controls column auto">
+        <div class="controls__location">
+          <h2 class="no-margin title is-4">You should drop in:</h2>
+          <h2 class="title is-2">{{selectedSquare.name}}</h2>
+          <h2 class="subtitle is-3">{{selectedSquare.coord}}</h2>
         </div>
         <div class="controls__repick is-spaced">
           <button class="button is-large is-primary" v-on:click="selectSquare">Pick again</button>
         </div>
-        <div class="controls__location">
-          <h2 class="title is-4">You should drop in:</h2>
-          <h2 class="title is-2">{{selectedSquare.name}}</h2>
-          <h2 class="subtitle is-3">{{selectedSquare.coord}}</h2>
-        </div>
       </div>
+      <Map class="column is-two-thirds" v-bind:mapImage="mapImage" v-bind:mapData="mapData"
+        v-bind:selectedSquare="selectedSquare">
+      </Map>
     </div>
   </div>
 </template>
@@ -52,19 +52,25 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
   @import "~bulma/bulma.sass";
-
+  .drop {
+    padding-top: 10px;
+  }
   .controls {
     display: grid;
-    grid-template-rows: 1fr 1fr 3fr;
+    grid-template-rows: auto auto;
     width: 100%;
     text-align: center;
-    margin-top: 20px;
     &__repick {
-      min-height: 70px;
-      align-self: center;
+      // min-height: 70px;
+      align-self: flex-start;
     }
     &__location {
-      max-width: 100%;
+      // max-width: 100%;
+      align-self: center;
     }
+  }
+
+  h2.no-margin {
+    margin-bottom: 0 !important;
   }
 </style>

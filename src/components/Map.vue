@@ -1,5 +1,5 @@
 <template>
-  <div class="map__container--outer column is-two-thirds">
+  <div class="map__container--outer">
     <div class="grid__horizontal" v-bind:style="gridColumns">
       <template v-for="coord in mapData.horizontalGrid">
         <div :key="coord">{{coord}}

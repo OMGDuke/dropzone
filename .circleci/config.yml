@@ -14,6 +14,10 @@ jobs:
       - run:
           name: get-rsync
           command: sudo apt install -y rsync
+      - run:
+          name: Fix host authenticity for 12.34.567.890
+          command: |
+            ssh-keyscan 138.68.175.39 >> ~/.ssh/known_hosts
       - deploy:
           name: digital-ocean
           command: rsync ./static omgduke@138.68.175.39:~/projects/dropzone_test

@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import erangelMap from '@/assets/erangel-map.png';
+import erangelMap from '@/assets/erangel-map.jpg';
 import erangelData from '../mapData/ErangelData';
 import Drop from './Drop';
 

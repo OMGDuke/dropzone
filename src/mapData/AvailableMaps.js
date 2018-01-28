@@ -1,4 +1,4 @@
-const erangelMap = require('../assets/erangel-map.png');
+const erangelMap = require('../assets/erangel-map.jpg');
 const miramarMap = require('../assets/miramar-map.jpg');
 const fortniteMap = require('../assets/fortnite-map.jpg');
 

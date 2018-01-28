@@ -18,10 +18,10 @@
     <div class="section container">
 
       <!-- Maps -->
-      <div class="columns has-text-centered">
+      <div class="columns is-multiline has-text-centered">
 
         <template v-for="map in availableMaps">
-          <div class="column" :key="map.name">
+          <div class="column is-one-third" :key="map.name">
             <router-link :to="{ path: map.link }" class="map__link">
               <figure class="image is-square">
                 <img :src=map.image :alt="map.name">

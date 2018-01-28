@@ -1,9 +1,9 @@
 import Vue from 'vue';
 import Router from 'vue-router';
+import Home from '@/components/Home';
 import Erangel from '@/components/Erangel';
 import Fortnite from '@/components/Fortnite';
 import Miramar from '@/components/Miramar';
-import Home from '@/components/Home';
 
 Vue.use(Router);
 

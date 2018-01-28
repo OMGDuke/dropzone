@@ -1,50 +1,45 @@
 <template>
-  <div class="section drop">
-    <h1 class="title is-1 page__heading">
-      <router-link to="/">DROPZONE</router-link>
-    </h1>
-    <div class="columns">
-      <Map v-bind:mapImage="mapImage" v-bind:mapData="mapData"
-        v-bind:selectedSquare="selectedSquare">
-      </Map>
-      <div class="controls column auto">
-        <div class="repick">
-          <button class="button is-primary" v-on:click="selectSquare">Pick again</button>
-        </div>
-        <div class="location">
-          <h2 class="title is-4">You should drop in:</h2>
-          <h2 class="title is-2">{{selectedSquare.name}}</h2>
-          <h2 class="title is-2">{{selectedSquare.coord}}</h2>
-        </div>
+  <div class="map__container--outer column is-two-thirds">
+    <div class="grid__horizontal">
+      <div>A</div>
+      <div>B</div>
+      <div>C</div>
+      <div>D</div>
+      <div>E</div>
+      <div>F</div>
+      <div>G</div>
+      <div>H</div>
+    </div>
+    <div class="grid__vertical">
+      <div>I</div>
+      <div>J</div>
+      <div>K</div>
+      <div>L</div>
+      <div>M</div>
+      <div>N</div>
+      <div>O</div>
+      <div>P</div>
+    </div>
+    <div class="map__container--inner">
+      <img class="map__image image" :src="mapImage" alt="">
+      <div class="grid is-overlay">
+        <template v-for="coord in mapData.grid">
+          <div class="grid__square" :key="coord"
+            :class="{'grid__square--selected': coord === selectedSquare.coord}">
+          </div>
+        </template>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import Map from './Map';
-
 export default {
-  name: 'Drop',
-  props: ['mapImage', 'mapData'],
-  components: {
-    Map,
-  },
+  name: 'Map',
+  props: ['mapImage', 'mapData', 'selectedSquare'],
   data() {
     return {
-      selectedSquare: {},
     };
-  },
-  created() {
-    this.selectSquare();
-  },
-  methods: {
-    selectSquare() {
-      const locations = this.mapData.locations;
-      const index = Math.random() * locations.length;
-      const location = locations[Math.floor(index)];
-      this.$data.selectedSquare = location;
-    },
   },
 };
 </script>
@@ -120,22 +115,5 @@ export default {
                 inset 0px -11px 8px -10px $primary;
       }
     }
-  }
-
-  .controls {
-    display: grid;
-    grid-template-rows: 50px auto;
-    width: 100%;
-    text-align: center;
-    // align-self: center;
-  }
-
-  .repick {
-    padding-top: 18px;
-  }
-
-  .location {
-    padding-top: 18px;
-    max-width: 100%;
   }
 </style>

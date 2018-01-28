@@ -3,7 +3,7 @@
     <div class="navbar-brand">
       <router-link class="navbar-item" to="/">
         <img class="map__image image" :src="logoWhite" alt="">&nbsp;
-        <h1>DROPZONE</h1>
+        <span>DROPZONE</span>
       </router-link>
       <div class="navbar-burger burger"
         v-on:click="showNav = !showNav" v-bind:class="{ 'is-active' : showNav }">

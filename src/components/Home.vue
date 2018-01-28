@@ -2,6 +2,8 @@
   <section class="">
 
     <div class="section container">
+      <h1 class="page-title title is-1 has-text-centered">DROPZONE</h1>
+      <h2 class="subtitle is-5 has-text-centered">Choose your map</h2>
 
       <!-- Maps -->
       <div class="columns is-multiline has-text-centered">
@@ -40,6 +42,11 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
   @import "~bulma/bulma.sass";
+
+  .page-title {
+    color: $primary;
+  }
+
   figure {
     margin-bottom: 10px;
   }

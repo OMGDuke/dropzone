@@ -9,7 +9,7 @@
       </Map>
       <div class="controls column auto">
         <div class="repick">
-          <button class="button is-primary" v-on:click="selectSquare">Pick again</button>
+          <button class="button is-large is-primary" v-on:click="selectSquare">Pick again</button>
         </div>
         <div class="location">
           <h2 class="title is-4">You should drop in:</h2>
@@ -65,69 +65,11 @@ export default {
     }
   }
 
-  .map {
-    &__container {
-      &--outer {
-        display: grid;
-        grid-template-columns: 20px auto;
-        grid-template-rows: 20px auto;
-        max-width: 80vh;
-      }
-      &--inner {
-        position: relative;
-        padding: 0;
-        max-width: 80vh;
-
-      }
-    }
-    &__image {
-      width: 100%;
-    }
-  }
-
-  .grid {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: repeat(8, 1fr);
-    &__horizontal {
-      display: grid;
-      grid-template-columns: repeat(8, 1fr);
-      grid-column-start: 2;
-      font-weight: bold;
-      div {
-        justify-self: center;
-      }
-    }
-    &__vertical {
-      display: grid;
-      grid-template-rows: repeat(8, 1fr);
-      font-weight: bold;
-      div {
-        align-self: center;
-        width: 10px;
-      }
-    }
-    &__square {
-      border: 1px $primary solid;
-      &--selected {
-        background: rgba(0, 209, 178, 0.3);
-        box-shadow: 0 0 15px 0 $primary,
-                inset 0 0 0 1px $primary,
-                inset 0px 11px 8px -10px $primary,
-                inset 0px -11px 8px -10px $primary;
-      }
-    }
-  }
-
   .controls {
     display: grid;
     grid-template-rows: 50px auto;
     width: 100%;
     text-align: center;
-    // align-self: center;
   }
 
   .repick {

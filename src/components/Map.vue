@@ -45,18 +45,6 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
   @import "~bulma/bulma.sass";
-  .page {
-    &__heading {
-      text-align: center;
-      > a {
-        color: black;
-        text-decoration: none;
-        &:hover {
-          color: $primary;
-        }
-      }
-    }
-  }
 
   .map {
     &__container {

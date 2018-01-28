@@ -21,7 +21,7 @@ jobs:
             - run:
                 name: Fix host authenticity for 138.68.175.39
                 command: |
-                ssh-keyscan 138.68.175.39 >> ~/.ssh/known_hosts
+                    ssh-keyscan 138.68.175.39 >> ~/.ssh/known_hosts
             - deploy:
                 name: digital-ocean
                 command: rsync -avz dist/ omgduke@138.68.175.39:~/projects/dropzone

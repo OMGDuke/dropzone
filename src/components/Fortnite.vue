@@ -6,7 +6,7 @@
 
 <script>
 import fortniteMap from '@/assets/fortnite-map.jpg';
-import fortniteData from '../FortniteData';
+import fortniteData from '../mapData/FortniteData';
 import Drop from './Drop';
 
 export default {

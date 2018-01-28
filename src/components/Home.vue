@@ -39,7 +39,7 @@
 </template>
 
 <script>
-import availableMaps from '../AvailableMaps';
+import availableMaps from '../mapData/AvailableMaps';
 
 export default {
   name: 'Home',

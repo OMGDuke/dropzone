@@ -5,6 +5,9 @@ jobs:
       - image: circleci/node:7
     steps:
       - checkout
+      -run:
+          name: get-rsync
+          command: sudo apt install -y rsync
       - run:
           name: install-dependencies
           command: npm install

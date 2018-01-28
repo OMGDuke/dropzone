@@ -5,15 +5,15 @@ jobs:
       - image: circleci/node:7
     steps:
       - checkout
-      -run:
-          name: get-rsync
-          command: sudo apt install -y rsync
       - run:
           name: install-dependencies
           command: npm install
       - run:
           name: build
           command: npm run build
+      - run:
+          name: get-rsync
+          command: sudo apt install -y rsync
       - deploy:
           name: digital-ocean
           command: rsync -./static omgduke@138.68.175.39:~/projects/dropzone_test

@@ -1,27 +1,27 @@
 version: 2
-	general:
-		branches:
-			only:
-				- master
-	jobs:
-		build:
-			docker:
-				- image: circleci/node:7
-			steps:
-				- checkout
-				- run:
-					name: install-dependencies
-					command: npm install
-				- run:
-					name: build
-					command: npm run build
-				- run:
-					name: get-rsync
-					command: sudo apt install -y rsync
-				- run:
-					name: Fix host authenticity for 138.68.175.39
-					command: |
-					ssh-keyscan 138.68.175.39 >> ~/.ssh/known_hosts
-				- deploy:
-					name: digital-ocean
-					command: rsync -avz dist/ omgduke@138.68.175.39:~/projects/dropzone
+general:
+    branches:
+        only:
+            - master
+jobs:
+    build:
+        docker:
+            - image: circleci/node:7
+        steps:
+            - checkout
+            - run:
+                name: install-dependencies
+                command: npm install
+            - run:
+                name: build
+                command: npm run build
+            - run:
+                name: get-rsync
+                command: sudo apt install -y rsync
+            - run:
+                name: Fix host authenticity for 138.68.175.39
+                command: |
+                ssh-keyscan 138.68.175.39 >> ~/.ssh/known_hosts
+            - deploy:
+                name: digital-ocean
+                command: rsync -avz dist/ omgduke@138.68.175.39:~/projects/dropzone
